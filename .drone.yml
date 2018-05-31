@@ -1,0 +1,11 @@
+workspace:
+  base: /go
+  path: src/github.com/drone/go-license
+
+pipeline:
+  build:
+    image: golang
+    commands:
+      - go get golang.org/x/crypto/ed25519
+      - go install ./...
+      - go test -v ./...
